@@ -1,4 +1,5 @@
 package main.java.com.model;
+import java.util.UUID;
 
 import java.util.Objects;
 
@@ -8,6 +9,7 @@ import java.util.Objects;
  */
 
 public class User {
+    private final String id;
     private final String email;
 
     private final String password;
@@ -22,6 +24,7 @@ public class User {
      * @param name     имя пользователя
      */
     public User(String email, String password, String name) {
+        this.id = UUID.randomUUID().toString();
         this.email = email;
         this.password = password;
         this.name = name;
@@ -55,6 +58,13 @@ public class User {
         this.name = name;
     }
 
+    /*
+     * Возвращает идентификатор пользователя.
+     */
+    public String getId() {
+        return id;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -68,4 +78,5 @@ public class User {
     public int hashCode() {
         return Objects.hash(email, password, name);
     }
+
 }
