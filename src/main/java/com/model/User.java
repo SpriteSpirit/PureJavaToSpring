@@ -8,9 +8,9 @@ import java.util.Objects;
  */
 
 public class User {
-    private String email;
+    private final String email;
 
-    private String password;
+    private final String password;
     private String name;
 
     /**
