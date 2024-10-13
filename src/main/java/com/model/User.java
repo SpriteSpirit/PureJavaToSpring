@@ -92,4 +92,11 @@ public class User {
         return Objects.hash(email, password, name);
     }
 
+    @Override
+    public String toString() {
+        return "Пользователь{" +
+                "#'" + getId() +
+                ", Имя: " + getName() +
+                ", Email: " + getEmail() + '}';
+    }
 }

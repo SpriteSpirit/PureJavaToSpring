@@ -86,7 +86,7 @@ public class InMemoryUserService implements UserService {
 
     @Override
     public User getUserById(String userId) {
-        return null;
+        return users.get(userId);
     }
 
 }

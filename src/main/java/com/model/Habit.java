@@ -2,16 +2,19 @@ package main.java.com.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-
 /**
  * Класс для описания привычки.
- * Содержит поля: id, title, description, frequency, createdDate
+ * Содержит поля: id, userId, title, description, frequency, completionDates
  */
 public class Habit {
     private final String id;
+//    private final int orderNumber;
+//    private static int nextOrderNumber = 1;
+    private final String userId; // Идентификатор пользователя-владельца
     private String title;
     private String description;
     private Frequency frequency;
@@ -19,14 +22,16 @@ public class Habit {
 
     /**
      * Конструктор класса Habit.
-     * Инициализирует поля класса
      *
+     * @param userId      идентификатор пользователя-владельца привычки
      * @param title       название привычки
      * @param description описание привычки
      * @param frequency   частота выполнения
      */
-    public Habit(String title, String description, Frequency frequency) {
+    public Habit(String userId, String title, String description, Frequency frequency) {
         this.id = UUID.randomUUID().toString();
+//        this.orderNumber = nextOrderNumber++;
+        this.userId = userId;
         this.title = title;
         this.description = description;
         this.frequency = frequency;
@@ -39,79 +44,65 @@ public class Habit {
      * @param date дата выполнения привычки
      */
     public void markCompleted(LocalDate date) {
-        completionDates.add(date);
+        if (!completionDates.contains(date)) {
+            completionDates.add(date);
+        }
     }
 
-    // Методы доступа (геттеры и сеттеры)
-    /**
-     * Возвращает уникальный идентификатор привычки.
-     *
-     * @return Строка, представляющая ID привычки
-     */
+    // Геттеры и сеттеры
+//    public int getOrderNumber() {
+//        return orderNumber;
+//    }
+
     public String getId() {
         return id;
     }
 
-    /**
-     * Получает название привычки.
-     *
-     * @return Название привычки
-     */
+    public String getUserId() {
+        return userId;
+    }
+
     public String getTitle() {
         return title;
     }
 
-    /**
-     * Устанавливает новое название для привычки.
-     *
-     * @param title Новое название привычки
-     */
     public void setTitle(String title) {
         this.title = title;
     }
 
-    /**
-     * Получает описание привычки.
-     *
-     * @return Описание привычки
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Устанавливает новое описание для привычки.
-     *
-     * @param description Новое описание привычки
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * Получает частоту выполнения привычки.
-     *
-     * @return Объект Frequency, представляющий частоту выполнения
-     */
     public Frequency getFrequency() {
         return frequency;
     }
 
-    /**
-     * Устанавливает новую частоту выполнения для привычки.
-     *
-     * @param frequency Новая частота выполнения
-     */
     public void setFrequency(Frequency frequency) {
         this.frequency = frequency;
     }
 
     /**
-     * Возвращает список дат, когда привычка была выполнена.
+     * Возвращает копию списка дат выполнения привычки.
      *
-     * @return Список дат выполнения привычки
+     * @return Список дат выполнения
      */
     public List<LocalDate> getCompletionDates() {
-        return completionDates;
+        return Collections.unmodifiableList(completionDates);
+    }
+
+    @Override
+    public String toString() {
+        return "Привычка{" +
+                "ID: " + getId() +
+                ", Название: " + getTitle() +
+                ", Описание: " + getDescription() +
+                ", Частота: " + getFrequency().getDescription() +
+                ", Даты завершения: " + getCompletionDates() +
+                '}';
     }
 }

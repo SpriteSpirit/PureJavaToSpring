@@ -3,13 +3,11 @@ package main.java.com.service;
 import main.java.com.model.User;
 
 /**
- * Интерфейс для управления пользователями, предоставляющий следующие методы:
- * - `register`: регистрация нового пользователя.
- * - `login`: авторизация пользователя.
- * - `updateProfile`: обновление профиля пользователя.
- * - `deleteAccount`: удаление аккаунта пользователя.
- * - `getUserById`: получение пользователя по его идентификатору.
+ * Интерфейс `UserService` определяет методы для управления пользователями в системе.
+ * Предоставляет функциональность для регистрации, авторизации, обновления профиля,
+ * удаления аккаунта и получения информации о пользователе.
  */
+
 public interface UserService {
     User register(String name, String email, String password);
     User login(String email, String password);
