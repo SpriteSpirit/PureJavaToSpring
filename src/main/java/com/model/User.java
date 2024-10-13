@@ -10,9 +10,9 @@ import java.util.Objects;
 
 public class User {
     private final String id;
-    private final String email;
+    private String email;
 
-    private final String password;
+    private String password;
     private String name;
 
     /**
@@ -65,6 +65,19 @@ public class User {
         return id;
     }
 
+    /*
+     * Устанавливает новый email.
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /*
+     * Устанавливает новый пароль.
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public boolean equals(Object o) {
