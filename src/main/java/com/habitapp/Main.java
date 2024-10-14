@@ -1,12 +1,12 @@
-package main.java.com;
+package com.habitapp;
 
-import main.java.com.model.Frequency;
-import main.java.com.model.Habit;
-import main.java.com.model.User;
-import main.java.com.service.HabitService;
-import main.java.com.service.InMemoryHabitService;
-import main.java.com.service.InMemoryUserService;
-import main.java.com.service.UserService;
+import com.habitapp.model.Frequency;
+import com.habitapp.model.Habit;
+import com.habitapp.model.User;
+import com.habitapp.service.HabitService;
+import com.habitapp.service.InMemoryHabitService;
+import com.habitapp.service.InMemoryUserService;
+import com.habitapp.service.UserService;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,4 +1,4 @@
-package main.java.com.model;
+package com.habitapp.model;
 import java.util.UUID;
 
 import java.util.Objects;

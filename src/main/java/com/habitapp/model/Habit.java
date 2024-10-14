@@ -1,4 +1,4 @@
-package main.java.com.model;
+package com.habitapp.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

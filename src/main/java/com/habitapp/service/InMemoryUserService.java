@@ -1,5 +1,5 @@
-package main.java.com.service;
-import main.java.com.model.User;
+package com.habitapp.service;
+import com.habitapp.model.User;
 
 import java.util.HashMap;
 import java.util.Map;

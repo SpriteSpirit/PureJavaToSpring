@@ -1,7 +1,7 @@
-package main.java.com.service;
+package com.habitapp.service;
 
-import main.java.com.model.Frequency;
-import main.java.com.model.Habit;
+import com.habitapp.model.Frequency;
+import com.habitapp.model.Habit;
 
 import java.time.LocalDate;
 import java.util.List;

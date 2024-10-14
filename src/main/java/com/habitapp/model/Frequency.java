@@ -1,4 +1,4 @@
-package main.java.com.model;
+package com.habitapp.model;
 
 public enum Frequency {
     DAILY(1, "Каждый день"),

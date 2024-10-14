@@ -1,6 +1,6 @@
-package main.java.com.service;
+package com.habitapp.service;
 
-import main.java.com.model.User;
+import com.habitapp.model.User;
 
 /**
  * Интерфейс `UserService` определяет методы для управления пользователями в системе.
